@@ -6,6 +6,7 @@ export { default as Search } from './assetmanagement/metermaster/components/Sear
 export {
 	default as BillingDeterminants
 } from './masterdatamanagement/billingdeterminants/determinants/BillingDeterminantsPage';
+export {default as OnDemandRequest} from './ondemandrequest/loadon-off/components/onDemand';
 export { default as NavBar } from './assetmanagement/dcumaster/components/NavBar';
 export { default as AMSummary } from './reports/asmSummary/pages/SummaryPage';
 export { default as AMInstalled } from './reports/asmInstalled/pages/InstalledPage';

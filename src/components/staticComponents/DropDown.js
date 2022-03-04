@@ -269,6 +269,41 @@ export default function MiniDrawer() {
 						<Divider />
 					</List>
 					<List style={{background: '#546e7a'}}>
+						<ListItemButton onClick={handleClick}>
+							<ListItemIcon>
+								<DashboardIcon />
+							</ListItemIcon>
+							<ListItemText primary="OnDemandRequest" />
+							{dashboard ? <ExpandLess /> : <ExpandMore />}
+						</ListItemButton>
+						<Collapse style={{background: '#819ca9'}} in={dashboard} timeout="auto" unmountOnExit>
+							<List component="div" disablePadding>
+								<ListItemButton  sx={{ pl: 3 }}>
+									<ListItemIcon>
+										<FastForwardIcon />
+									</ListItemIcon>
+									<ListItemText position="nonstatic" onClick={() => {
+										dispatch({ type: 'ondemandrequest' });
+									}}
+										primary="Loadon" />
+								</ListItemButton>
+							</List>
+							<List component="div" disablePadding>
+								<ListItemButton sx={{ pl: 3 }}>
+									<ListItemIcon>
+										<FastForwardIcon />
+									</ListItemIcon>
+									<ListItemText onClick={() => {
+										dispatch({ type: 'tampers-events' });
+									}}
+										style={{ cursor: 'pointer' }} primary="tampers-events" />
+								</ListItemButton>
+							</List>
+
+						</Collapse>
+						<Divider />
+					</List>
+					<List style={{background: '#546e7a'}}>
 						<ListItemButton onClick={handleAssect}>
 							<ListItemIcon>
 								<ManageAccountsIcon />

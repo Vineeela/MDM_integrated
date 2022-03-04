@@ -336,7 +336,7 @@ export default function TampersAndEvents() {
                     </TextField>
                 </Grid>
 
-                <Grid item xs={3}>
+                <Grid it xs={3}>
                     <TextField
                         select
                         fullWidth
