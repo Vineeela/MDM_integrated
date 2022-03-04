@@ -5,20 +5,17 @@ import TextField from '@mui/material/TextField';
 
 
 
-import Divisions from '../utils/Divisions.json';
-import SubDivisions from '../utils/SubDivisions.json';
-import Sections from '../utils/Sections.json';
-import SubStations from '../utils/SubStations.json';
-import Feeders from '../utils/Feeders.json';
-import DTR from '../utils/DTR.json';
-import Region from '../utils/Region.json';
-import Circle from '../utils/Circle.json';
-import ButtonTheme from '../../../../CustomButton/ButtonTheme';
-import ClearButton from '../../../../CustomButton/ClearButton';
+import Divisions from './Utils/Divisions.json';
+import SubDivisions from './Utils/SubDivisions.json';
+import Sections from './Utils/Sections.json';
+import SubStations from './Utils/SubStations.json';
+import Feeders from './Utils/Feeders.json';
+import DTR from './Utils/DTR.json';
+import Region from './Utils/Region.json';
+import Circle from './Utils/Circles.json';
 
 
-
-export default function ContentComponent() {//contains textfields and dropdowns
+export default function Form() {//contains textfields and dropdowns
 
 
 
@@ -40,9 +37,7 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
   //useState(initialValues) hook is used to set and store initialized values
   const [values, setValues] = useState(initialValues);
-
   const [newRegion, setnewRegion] = useState([]);
-  
   const [circle, setCircle] = useState([]);
   const [newCircle, setnewCircle] = useState([]);
 
@@ -90,7 +85,6 @@ export default function ContentComponent() {//contains textfields and dropdowns
     setCircle(circ);
     setnewRegion(e.target.value);
   }
-  
   //function to filter the circle' according to the selection of region
   const onCircle = (e) => {
     e.preventDefault();
@@ -232,22 +226,25 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
   return (
     <div>
-      <Box sx={{ display: 'flex', pt: 3, pb: 28, m: 1, flexDirection: 'row' }}>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={3}>
-            <Typography >
-              Discom : TSSPDCL
-            </Typography>
-          </Grid>
-
-          <Grid item xs={3}>
-            <TextField
-              id="outlined-select-currency-native"
-              select
-              fullWidth
-              required label="Region"
-              variant="standard"
-              name="Region"
+       <Box
+        component="form"
+        sx={{'& .MuiTextField-root': { m:1, width:'35ch' }}}>
+     
+        <TextField
+         
+          id="outlined-read-only-input"
+          label="Discom"
+          defaultValue="TSSPDCL"
+          InputProps={{
+            readOnly: true,
+          }}
+         
+        />
+       
+          <TextField
+            select
+            id="outlined-select"
+            label="Region"
               value={newRegion}
               onChange={onRegion}
             >
@@ -261,15 +258,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
             </TextField>
 
-          </Grid>
-          <Grid item xs={3}>
-            <TextField
-              id="outlined-select-currency-native"
-              select
-              fullWidth
-              required label="Circle"
-              variant="standard"
-              name="Circle"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="Circles"
               value={newCircle}
               onChange={onCircle}
             >
@@ -282,18 +275,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
 
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              name="division"
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="select division"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="Division :"
               onChange={onDivision}
               value={division}
             >
@@ -303,17 +289,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="select subdivision"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="Sub Division:"
               onChange={onSubDivision}
               value={newSubdiv}
             >
@@ -323,17 +303,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="sections"
+         
+          <TextField
+            select
+            id="outlined-required"
+            label="Sections:" 
               onChange={onSection}
               value={newSec}
             >
@@ -343,17 +317,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="Sub Stations"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="Sub Stations :"
               onChange={onSubStation}
               value={newSubSta}
             >
@@ -363,17 +331,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="Feeders"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="Feeder :"
               onChange={onFeeder}
               value={newFeeder}
             >
@@ -383,17 +345,11 @@ export default function ContentComponent() {//contains textfields and dropdowns
                 </MenuItem>
               ))}
             </TextField>
-          </Grid>
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              select
-              fullWidth
-              variant="standard"
-              color="primary"
-              label="DTR"
+       
+          <TextField
+            select
+            id="outlined-select"
+            label="DTR :"
               onChange={onDtr}
               value={newDtr}
             >
@@ -406,19 +362,12 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
 
             </TextField>
-          </Grid>
-
-
-
-
-
-
-          <Grid item xs={3}>
-            <TextField
-              id="outlined-select-currency-native"
-              required label="METER"
-              name="METER"
-              variant="standard"
+         
+          <TextField
+            select
+            id="outlined-select"
+            label="METER :"
+           
               value={values.METER}
 
 
@@ -429,85 +378,9 @@ export default function ContentComponent() {//contains textfields and dropdowns
 
 
             </TextField>
-          </Grid>
-          <Grid item xs={6}>
+         
 
-
-
-          </Grid>
-
-
-
-          <Grid item xl={6} md={3} xs={6} sm={6}>
-
-
-
-            <TextField name='Fromdate' label="Fromdate" type="date" value={values.date} sx={{ width: 220 }}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              onChange={handleInputChange}
-            />
-          </Grid>
-
-
-
-          <Grid item xl={6} md={3} xs={6} sm={6}>
-            <TextField
-
-
-
-              name='todate'
-
-
-
-              label="Todate"
-
-
-
-              type="date"
-
-
-
-              value={values.date}
-
-
-
-              sx={{ width: 220 }}
-
-
-
-              InputLabelProps={{
-
-
-
-                shrink: true,
-
-
-
-              }}
-
-
-
-              onChange={handleInputChange}
-
-
-
-            />
-          </Grid>
-
-
-
-
-          <Grid item xs={12} md={12}>
-            <Stack spacing={2} direction="row" justifyContent="center">
-              <Button variant="contained" color="success" style={{ borderRadius: 50, color: 'black', backgroundImage: `linear-gradient(to left, rgb(209,209,209), rgb(41,67,78))`, fontWeight: 'bold' }} onClick={handleSubmit}>SUBMIT </Button>
-              <ButtonTheme />
-              <ClearButton />
-            </Stack>
-          </Grid>
-
-        </Grid>
+     
       </Box>
     </div>
   );

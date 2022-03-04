@@ -40,6 +40,12 @@ const componentChange = (state = initialState, action) => {
 				component: 'Search'
 			};
 		}
+		case 'ondemandrequest': {
+			return {
+				...state,
+				component: 'OnDemandRequest'
+			};
+		}
 		case 'billing-determinants': {
 			return {
 				...state,
