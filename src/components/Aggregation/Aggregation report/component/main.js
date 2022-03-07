@@ -1,5 +1,5 @@
-import DenseAppBar from './component/Appbar';
-import  BasicGrid from './component/Grid';
+import DenseAppBar from './Appbar';
+import  BasicGrid from './Grid';
 
 function main() {
   return (

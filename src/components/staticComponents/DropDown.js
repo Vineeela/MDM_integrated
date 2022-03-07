@@ -268,6 +268,8 @@ export default function MiniDrawer() {
 						</Collapse>
 						<Divider />
 					</List>
+
+					
 					<List style={{background: '#546e7a'}}>
 						<ListItemButton onClick={handleClick}>
 							<ListItemIcon>
@@ -379,6 +381,30 @@ export default function MiniDrawer() {
 										style={{ cursor: 'pointer' }} primary="Parameter Threshold Master" />
 								</ListItemButton>
 							</List>
+						</Collapse>
+					</List>
+					<Divider />
+					<List style={{background: '#546e7a'}}>
+						<ListItemButton onClick={handlemdm}>
+							<ListItemIcon>
+								<CastForEducationIcon />
+							</ListItemIcon>
+							<ListItemText primary="Aggregation" />
+							{mdm ? <ExpandLess /> : <ExpandMore />}
+						</ListItemButton>
+						<Collapse style={{background: '#819ca9'}}in={mdm} timeout="auto" unmountOnExit>
+							<List component="div" disablePadding>
+								<ListItemButton sx={{ pl: 3 }}>
+									<ListItemIcon>
+										<FastForwardIcon />
+									</ListItemIcon>
+									<ListItemText onClick={() => {
+										dispatch({ type: 'Aggregationreport' });
+									}}
+										style={{ cursor: 'pointer' }} primary="Aggregation Report" />
+								</ListItemButton>
+							</List>
+							
 						</Collapse>
 					</List>
 					<Divider />

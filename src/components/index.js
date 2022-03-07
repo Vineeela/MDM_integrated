@@ -9,6 +9,7 @@ export {
 export {default as OnDemandRequest} from './ondemandrequest/loadon-off/components/onDemand';
 export { default as NavBar } from './assetmanagement/dcumaster/components/NavBar';
 export { default as AMSummary } from './reports/asmSummary/pages/SummaryPage';
+export {default as main} from './Aggregation/Aggregation report/component/main';
 export { default as AMInstalled } from './reports/asmInstalled/pages/InstalledPage';
 export { default as AMCommunicated } from './reports/asmcommunicated/pages/Communicatedpage';
 export { default as AMComissioned } from './reports/asmcomissioned/pages/ComissionedPage';

@@ -46,6 +46,12 @@ const componentChange = (state = initialState, action) => {
 				component: 'OnDemandRequest'
 			};
 		}
+		case 'Aggregationreport': {
+			return {
+				...state,
+				component: 'main'
+			};
+		}
 		case 'billing-determinants': {
 			return {
 				...state,
