@@ -39,6 +39,7 @@ function TabPanel(props) {// function for tabpanel to align content horizontally
   );
 }
 
+//commented by chiru
 TabPanel.propTypes = {// using proptypes to specify the data type and to pass the data
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
